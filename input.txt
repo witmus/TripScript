@@ -1,0 +1,19 @@
+from(12.04.2024)
+
+add_town(Wroclaw, 5)
+
+add_attraction(Wroclaw, pwr)
+
+remove_town(Wroclaw)
+
+remove_attraction(Wroclaw, pwr)
+
+first(Wroclaw)
+
+show_attractions(Wroclaw)
+
+show_route
+
+last_day
+
+start
