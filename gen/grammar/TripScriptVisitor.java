@@ -1,6 +1,5 @@
 // Generated from C:/Users/witek/IdeaProjects/TripScript/src/grammar/TripScript.g4 by ANTLR 4.13.1
 package grammar;
-import exceptions.TownNotFoundException;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**

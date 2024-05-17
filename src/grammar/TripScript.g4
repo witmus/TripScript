@@ -43,7 +43,7 @@ START_KW: 'start';
 
 //inputs
 
-DATE : INT'.'INT'.'INT;
+DATE : INT'-'INT'-'INT;
 
 INT : [0-9]+ ;
 

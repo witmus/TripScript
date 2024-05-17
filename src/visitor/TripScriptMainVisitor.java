@@ -5,9 +5,11 @@ import engine.TripScriptEngine;
 import exceptions.TownNotFoundException;
 import grammar.TripScriptBaseVisitor;
 import grammar.TripScriptParser;
+import model.PlaceOfInterest;
 import org.antlr.v4.runtime.CharStream;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class TripScriptMainVisitor extends TripScriptBaseVisitor<String> {
     private CharStream _input = null;
@@ -101,11 +103,21 @@ public class TripScriptMainVisitor extends TripScriptBaseVisitor<String> {
 
     @Override
     public String visitShow_attractions_stat(TripScriptParser.Show_attractions_statContext ctx) {
+        List<PlaceOfInterest> places;
+
         if(ctx.town != null){
-            return _engine.GetPois(ctx.town.getText()).toString();
+            places = _engine
+                    .GetPois(ctx.town.getText());
+        } else {
+            places = _engine
+                    .GetPois();
         }
 
-        return _engine.GetPois().toString();
+        return places
+                .stream()
+                .map(PlaceOfInterest::GetName)
+                .toList()
+                .toString();
     }
 
     @Override

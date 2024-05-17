@@ -57,7 +57,7 @@ public class TripScriptEngine extends TripScriptEngineBase implements ITripScrip
      */
     @Override
     public void AddTown(String name, int daysSpent) throws TownNotFoundException {
-        //for testing purposes
+        //for testing purposes, remove after implementing DB queries
         if(name == "dupa"){
             throw new TownNotFoundException("dupa");
         }
@@ -170,6 +170,7 @@ public class TripScriptEngine extends TripScriptEngineBase implements ITripScrip
      */
     @Override
     public LocalDate GetLastDay() {
+        //replace below with logic
         return _startDate.plusDays(7);
     }
 
